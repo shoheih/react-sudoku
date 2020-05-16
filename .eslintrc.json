@@ -25,6 +25,7 @@
       "error",
       {
         "singleQuote": true,
+        "jsxSingleQuote": true,
         "semi": true
       }
     ],
