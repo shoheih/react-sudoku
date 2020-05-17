@@ -27,6 +27,7 @@
         "allowSingleExtends": true
       }
     ],
+    "@typescript-eslint/interface-name-prefix": 0,
     "prettier/prettier": [
       "error",
       {
