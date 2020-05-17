@@ -5,3 +5,7 @@ export type N = 0 | NUMBERS;
 export type ROW = [N, N, N, N, N, N, N, N, N];
 
 export type GRID = [ROW, ROW, ROW, ROW, ROW, ROW, ROW, ROW, ROW];
+
+export type SQUARE_ROW = [N, N, N];
+
+export type SQUARE = [SQUARE_ROW, SQUARE_ROW, SQUARE_ROW];
