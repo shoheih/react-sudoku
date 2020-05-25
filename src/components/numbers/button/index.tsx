@@ -3,28 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 
 import { Button } from 'components';
-import { fillBlock, IReducer } from 'reducers';
-import { NUMBERS, BLOCK_COORDS, N } from '../../../typings';
+import { fillBlock } from 'reducers';
+import { NUMBERS } from '../../../typings';
 
 interface IProps {
   value: NUMBERS;
 }
 
-interface IState {
-  selectedBlock?: BLOCK_COORDS;
-  selectedValue: N;
-}
-
 const NumberButton: FC<IProps> = ({ value }) => {
-  const state = useSelector<IReducer, IState>(
-    ({ selectedBlock, workingGrid }) => ({
-      selectedBlock,
-      selectedValue:
-        workingGrid && selectedBlock
-          ? workingGrid[selectedBlock[0]][selectedBlock[1]]
-          : 0,
-    })
-  );
+  const state = useSelector(({ selectedBlock, workingGrid }) => ({
+    selectedBlock,
+    selectedValue:
+      workingGrid && selectedBlock
+        ? workingGrid[selectedBlock[0]][selectedBlock[1]]
+        : 0,
+  }));
 
   const dispatch = useDispatch<Dispatch<AnyAction>>();
 
