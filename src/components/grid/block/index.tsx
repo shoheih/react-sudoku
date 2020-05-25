@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Dispatch, AnyAction } from 'redux';
 
-import { IReducer, selectBlock } from 'reducers';
-import { N, INDEX } from 'typings';
+import { selectBlock } from 'reducers';
+import { INDEX } from 'typings';
 
 import { Container } from './styles';
 
@@ -12,14 +12,8 @@ interface IProps {
   rowIndex: INDEX;
 }
 
-interface IState {
-  isActive: boolean;
-  isPuzzle: boolean;
-  value: N;
-}
-
 const Block: FC<IProps> = ({ colIndex, rowIndex }) => {
-  const state = useSelector<IReducer, IState>(
+  const state = useSelector(
     ({ challengeGrid, workingGrid, selectedBlock }) => ({
       isActive: selectedBlock
         ? selectedBlock[0] === rowIndex && selectedBlock[1] === colIndex
