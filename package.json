@@ -57,7 +57,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "typescript": "~3.7.2"
   },
   "husky": {
